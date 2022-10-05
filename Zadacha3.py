@@ -4,21 +4,19 @@
 from random import choices
 
 def num_list(count):
-    list2 = choices(range(10), k = count)
-    return list2
+    list1 = choices(range(10), k = count)
+    return list1
 
 def get_unique_numbers(numbers):
     uni_list = []
     for number in numbers:
-        if number in uni_list:
-            continue
-        else:
+        if numbers.count(number) == 1:
             uni_list.append(number)
     return uni_list
     
-my_list = num_list(int(input('Укажите количество элементов в списке: ')))
-print(my_list)
-print(get_unique_numbers(my_list))
+list2 = num_list(int(input('Укажите количество элементов в списке: ')))
+print(list2)
+print(get_unique_numbers(list2))
 
 
 
