@@ -4,6 +4,8 @@
 from random import choices
 
 def num_list(count):
+    if count <= 0:
+        return 'Ошибка!'
     list1 = choices(range(10), k = count)
     return list1
 
@@ -15,8 +17,11 @@ def get_unique_numbers(numbers):
     return uni_list
     
 list2 = num_list(int(input('Укажите количество элементов в списке: ')))
-print(list2)
-print(get_unique_numbers(list2))
+if list2 != 'Ошибка!':
+    print ('Последовательность чисел:', list2)
+    print('Список неповторяющихся элементов:', get_unique_numbers(list2))
+else:
+    print('Ошибка! Повторите запрос!')
 
 
 
